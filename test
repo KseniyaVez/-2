@@ -1,0 +1,19 @@
+Тест на создание объекта FooString с пустой строкой:
+TEST(FooStringTest, CanCreateWithEmptyString) {
+  FooString fooString;
+  EXPECT_EQ("", fooString.show());
+}
+
+Тест на сравнение двух одинаковых строк:
+TEST(FooStringTest, EqualStringsAreEqual) {
+  const char* str1 = "Hello, World!";
+  FooString first("Hello, World!");
+  FooString second(str1);
+  ASSERT_TRUE(first.compare(second));
+}
+
+Тест на сравнение двух разных строк:
+TEST(FooStringTest, UnequalStringsAreNotEqual) {
+  const char* not_str1 = "Not Hello, World!";
+  FooString not_first("Not Hello, World!");
+}
